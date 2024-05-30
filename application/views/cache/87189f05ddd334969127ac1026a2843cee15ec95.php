@@ -1,0 +1,87 @@
+<?php 
+  $ci = get_instance();
+?>
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<title><?php echo e($title); ?></title>
+		<meta name="description" content="E-SKM" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+		<link rel="canonical" href="https://www.survei-kepuasan.com" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/custom/fullcalendar/fullcalendar.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/custom/prismjs/prismjs.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>css/style.bundle.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>css/themes/layout/header/base/light.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>css/themes/layout/header/menu/light.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>css/themes/layout/brand/dark.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(TEMPLATE_BACKEND_PATH); ?>css/themes/layout/aside/dark.css" rel="stylesheet" type="text/css" />
+		<link href="<?php echo e(base_url()); ?>assets/vendor/wow/animate.css" rel="stylesheet" type="text/css" />
+		
+	    <link href="<?php echo e(base_url()); ?>assets/vendor/smart-menu/css/sm-core-css.css" rel="stylesheet" type="text/css" />
+	    <link href="<?php echo e(base_url()); ?>assets/vendor/smart-menu/css/sm-blue/sm-blue.css" rel="stylesheet" type="text/css" />
+		<link rel="shortcut icon" href="<?php echo e(base_url()); ?>assets/img/site/logo/favicon.ico" />
+		<?php echo $__env->yieldContent('style'); ?>
+	</head>
+	<?php if(!$ci->uri->segment(1) or ($ci->uri->segment(1) == 'home')): ?>
+		<?php
+			$bgc = "background-color: #FFFFFF;";
+		?>
+	<?php else: ?>
+		<?php
+			$bgc = "";
+		?>
+	<?php endif; ?>
+	<body id="kt_body" class="header-fixed header-mobile-fixed subheader-enabled subheader-fixed page-loading" style="<?php echo e($bgc); ?>">
+		<?php echo $__env->make('include_backend/partials_no_aside/_kt_header_mobile', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<div class="d-flex flex-column flex-root">
+			<div class="d-flex flex-row flex-column-fluid page">
+				<div class="d-flex flex-column flex-row-fluid wrapper" id="kt_wrapper">
+					<?php echo $__env->make('include_backend/partials_no_aside/_kt_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+					<div class="content d-flex flex-column flex-column-fluid" id="kt_content">
+						<?php if(!$ci->uri->segment(1) or ($ci->uri->segment(1) == 'home')): ?>
+						
+						<?php else: ?>
+							
+						<?php endif; ?>
+						<div class="d-flex flex-column-fluid">
+							
+							<?php echo $__env->yieldContent('content'); ?>
+						</div>
+					</div>
+					<?php echo $__env->make('include_backend/partials_no_aside/_footer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+				</div>
+			</div>
+		</div>
+		<?php echo $__env->make('include_backend/partials_no_aside/_kt_quick_user', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<?php echo $__env->make('include_backend/partials_no_aside/_kt_quick_cart', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		<?php echo $__env->make('include_backend/partials_no_aside/_kt_quick_panel', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		
+		<?php echo $__env->make('include_backend/partials_no_aside/_kt_scrolltop', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+		
+		
+
+		<script>var KTAppSettings = { "breakpoints": { "sm": 576, "md": 768, "lg": 992, "xl": 1200, "xxl": 1400 }, "colors": { "theme": { "base": { "white": "#ffffff", "primary": "#3699FF", "secondary": "#E5EAEE", "success": "#1BC5BD", "info": "#8950FC", "warning": "#FFA800", "danger": "#F64E60", "light": "#E4E6EF", "dark": "#181C32" }, "light": { "white": "#ffffff", "primary": "#E1F0FF", "secondary": "#EBEDF3", "success": "#C9F7F5", "info": "#EEE5FF", "warning": "#FFF4DE", "danger": "#FFE2E5", "light": "#F3F6F9", "dark": "#D6D6E0" }, "inverse": { "white": "#ffffff", "primary": "#ffffff", "secondary": "#3F4254", "success": "#ffffff", "info": "#ffffff", "warning": "#ffffff", "danger": "#ffffff", "light": "#464E5F", "dark": "#ffffff" } }, "gray": { "gray-100": "#F3F6F9", "gray-200": "#EBEDF3", "gray-300": "#E4E6EF", "gray-400": "#D1D3E0", "gray-500": "#B5B5C3", "gray-600": "#7E8299", "gray-700": "#5E6278", "gray-800": "#3F4254", "gray-900": "#181C32" } }, "font-family": "Poppins" };</script>
+		<script src="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/global/plugins.bundle.js"></script>
+		<script src="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/custom/prismjs/prismjs.bundle.js"></script>
+		<script src="<?php echo e(TEMPLATE_BACKEND_PATH); ?>js/scripts.bundle.js"></script>
+		<script src="<?php echo e(TEMPLATE_BACKEND_PATH); ?>plugins/custom/fullcalendar/fullcalendar.bundle.js"></script>
+		<script src="<?php echo e(TEMPLATE_BACKEND_PATH); ?>js/pages/widgets.js"></script>
+		
+    	<script src="<?php echo e(base_url()); ?>assets/vendor/wow/wow.min.js"></script>
+		<script>new WOW().init();</script>
+    	
+    	<script type="text/javascript" src="<?php echo e(base_url()); ?>assets/vendor/smart-menu/jquery.smartmenus.js"></script>
+		<script type="text/javascript">
+			$(function() {
+				$('#main-menu').smartmenus({
+					subMenusSubOffsetX: 1,
+					subMenusSubOffsetY: -8
+				});
+			});
+		</script>
+		<?php echo $__env->yieldContent('javascript'); ?>
+	</body>
+</html><?php /**PATH C:\xampp-7.3.33\htdocs\surveiku_spak_spkp\application\views/include_backend/template_no_aside.blade.php ENDPATH**/ ?>
